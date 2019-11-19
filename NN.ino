@@ -46,7 +46,7 @@ void OutputActivation() {
     for (int j=0; j<numHidden; j++) {
       activation += hiddenLayer[j] * outputWeights[j][i];
     }
-    hiddenLayer[i] = sigmoid(activation);
+    outputLayer[i] = sigmoid(activation);
   }
 }
 
