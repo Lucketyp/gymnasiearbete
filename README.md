@@ -23,3 +23,7 @@ Inspiration
 https://www.youtube.com/watch?v=ZX2Hyu5WoFg&t=253s
 
 https://www.youtube.com/watch?v=r428O_CMcpI&t=51s
+
+PC till Arduino Python kod
+
+https://forum.arduino.cc/index.php?topic=225329.msg1810764#msg1810764
