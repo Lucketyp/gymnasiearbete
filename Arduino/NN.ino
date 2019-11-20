@@ -3,7 +3,6 @@
   static const int numHidden = 5;
   static const int numOutputs = 1;
 
-  double inputLayer[numInputs];
   double hiddenLayer[numHidden];
   double outputLayer[numOutputs];
 
@@ -14,42 +13,34 @@
   double outputWeights[numHidden][numOutputs];
 
 void setup() {
-  
+  //Behöver mata in ett serialiserat nätverk
 }
 
 void loop() {
   //Behöver få inputs från sensorerna
-  Activation();
   //Behöver skicka outputs till svägning
 }
 
-void Activation() {
-  HiddenActivation();
-  OutputActivation();
-}
-
-//Från lager 1 till 2
-void HiddenActivation() {
+double Process(double input[]) {
+  double output;
+  //Från lager 1 till 2
   for(int i=0; i < numHidden; i++) {
     double activation = hiddenBiases[i];
     for (int j=0; j<numInputs; j++) {
-      activation += inputLayer[j] * hiddenWeights[j][i];
+      activation += input[j] * hiddenWeights[j][i];
     }
     hiddenLayer[i] = sigmoid(activation);
   }
-}
-
-//Från lager 2 till 3
-void OutputActivation() {
+  //Från lager 2 till 3
   for(int i=0; i < numOutputs; i++) {
     double activation = outputBiases[i];
     for (int j=0; j<numHidden; j++) {
       activation += hiddenLayer[j] * outputWeights[j][i];
     }
-    outputLayer[i] = sigmoid(activation);
+    output = sigmoid(activation);
   }
+  return output;
 }
-
 
 double sigmoid(double In) {
   return 1.0/(1.0 + exp(-In));
