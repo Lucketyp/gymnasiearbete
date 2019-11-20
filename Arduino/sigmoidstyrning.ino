@@ -25,7 +25,6 @@ void setup() {
 
 void loop() {
  
-  steer();
 }
 
 void drive(uint8_t LMFVAL, uint8_t LMRVAL, uint8_t RMFVAL, uint8_t RMRVAL){
