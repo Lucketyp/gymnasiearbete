@@ -194,7 +194,7 @@ public class NN : IComparable<NN>
         TextReader tr = new StreamReader(path);
         int NumberOfLines = (int)new FileInfo(path).Length;
         string[] ListLines = new string[NumberOfLines];
-        int index = 1;
+        int index = 0;
 
         for (int i = 0; i < NumberOfLines; i++)
         {
