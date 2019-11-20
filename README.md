@@ -1,5 +1,5 @@
 # gymnasiearbete
-Lumpan samt Lucas bygger bil
+Självkörande maskinlärd arduino bil
 
 Gymnasiearbete hösten 2019 våren 2020 av Erik Lundberg och Lucas Johnson
 
