@@ -7,7 +7,7 @@ class NN
 {
   public:
     NN(double network[]);
-    double process(double input[]);
+    double process(float input[]);
     
   private:
     void load(double network[]);
