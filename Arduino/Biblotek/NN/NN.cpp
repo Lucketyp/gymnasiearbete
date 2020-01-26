@@ -6,7 +6,7 @@ NN::NN(double network[])
   load(network);
 }
 
-double NN::process(float input[]) 
+double NN::process(float input[3]) 
 {
    double output;
   //Från lager 1 till 2
