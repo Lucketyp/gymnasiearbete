@@ -1,9 +1,9 @@
 //Självkörande bil
 //Skapad av Lucas Johnson
 
-#define sensor1 A3 // Sharp IR GP2Y0A41SK0F (4-30cm, analog)
-#define sensor2 A4
-#define sensor3 A5
+#define sensor1 A4 // Sharp IR GP2Y0A41SK0F (4-30cm, analog)
+#define sensor2 A5 // Sensorriktning ordning: frammåt, vänster, höger
+#define sensor3 A3
 
 //Biblotek
 #include <NN.h>
@@ -54,18 +54,26 @@ Styrning styr = Styrning();
 double steerValue = 0;
 float sensValues[3];
 
+float testInput[3] = {1, 1, 0};
+
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //Innan setup globala variablar och konstanter
 void setup() {
 Serial.begin(115200);
+
+//Testa med bestämda värden
+  steerValue = net.process(testInput);
+  Serial.println(steerValue);
 }
 
 void loop() {
   //Sensor läsning
-  sens.readSensors();
+  sens.readSensors(); //värde mellan 0 => 0.85
+  
+  
   //Processa sensorer
-  steerValue = net.process(sens.inputDis);
-  Serial.println(steerValue - 0.5f);
+  //steerValue = net.process(sens.inputDis);
+  
   //Styrning
-  styr.steer(steerValue);
+  //styr.steer(steerValue);
 }
