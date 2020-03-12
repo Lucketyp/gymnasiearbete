@@ -13,14 +13,16 @@ Styrning::Styrning()
 
 void Styrning::steer (float steering) {
 
+	//Kör funktionen ska bli mellan 0 och 255
+	//100 och 250
+	//Just nu är min 0.45 max 0.65
   drive(HIGH, LOW, HIGH, LOW); // kör framåt 
-  float k = steering - 0.5f;
-	if (k > 0) {
-    int a = baseDrive + k * addedDrive * 2; // Max värde blir 255
+  float k = steering - 0.45f;
+  int a = k * addedDrive + m; // Max värde blir 255
+	if (k > 0.1) {
     analogWrite(RM, baseDrive); // Andra motors spänning är konstant
     analogWrite(LM, a);// Ändrar motors spänning
-  } else if (k < 0) {
-    int a = baseDrive + k * addedDrive * 2 * -1; 
+  } else if (k < 0.1) {
     analogWrite(RM, a); 
     analogWrite(LM, baseDrive);   
   }

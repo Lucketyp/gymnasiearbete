@@ -18,8 +18,9 @@ class Styrning
   const int LM = 9;
   const int RM = 3;
 
-  const int baseDrive = 100;
-  const int addedDrive = 155;
+  const int baseDrive = 50;
+  const int m = 100;
+  const int addedDrive = 750;
 //bDrive+aDrive = 255
   
 };
